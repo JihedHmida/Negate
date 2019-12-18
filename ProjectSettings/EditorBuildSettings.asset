@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Negat/Scenes/LoadingScene.unity
+    guid: 70270750d1e96de4398aab741ecc7d81
+  - enabled: 1
+    path: Assets/Negat/Scenes/MainScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Negat/Scenes/LevelScene.unity
+    guid: c7a1d57a969947b469078c21aff5cebb
+  - enabled: 1
+    path: Assets/Negat/Scenes/GameScene.unity
+    guid: 744801335abddf740937b938e9e7602e
   m_configObjects: {}
