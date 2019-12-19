@@ -22,7 +22,7 @@ public class GameHandler : MonoBehaviour
      public static void Initialization()
     {
         SoundManager.Initialize();
-        LevelManager.Initialize();
+        PackManager.Initialize();
     }
     public static void RestValues()
     {

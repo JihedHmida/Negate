@@ -19,7 +19,7 @@ public class LevelLoader : MonoBehaviour
 
     private void Awake()
     {
-        levelMap = LevelManager.GetTexture2D(LevelLoaderManager.Instance.index);
+        levelMap = LevelManager.GetTexture2D(LevelLoaderManager.Instance.level);
     }
     void Start()
     {
@@ -67,6 +67,9 @@ public class LevelLoader : MonoBehaviour
                     if (!type) return;
                     switch (type.goType)
                     {
+                        case Type.GoType.Goal:
+                            Goal(ctp, x, y);
+                            break;
                         case Type.GoType.Laser:
                             SpawnLaserAtoB(ctp, x, y);
                             break;
@@ -82,11 +85,15 @@ public class LevelLoader : MonoBehaviour
                         case Type.GoType.CameraTrigger:
                             CameraTrigger(ctp, x, y);
                             break;
-                        case Type.GoType.Goal:
-                            Goal(ctp, x, y);
+                        case Type.GoType.Star:
+                            SpawnStar(ctp, x, y);
                             break;
 
+
                     }
+                    if (ctp.prefab.tag == "Goal")
+                        Goal(ctp, x, y);
+
                 }
             }
 
@@ -94,9 +101,16 @@ public class LevelLoader : MonoBehaviour
 
 
     }
-
+    void SpawnStar(ColorToPrefab ctp, int x, int y)
+    {
+        go = Instantiate(ctp.prefab, new Vector3(x, y, 0), Quaternion.identity);
+        go.transform.localScale = new Vector3(.5f, .5f, .5f);
+        go.transform.parent = this.transform;
+        return;
+    }
     void Goal(ColorToPrefab ctp, int x, int y)
     {
+        Debug.Log("GOAL");
         go = Instantiate(ctp.prefab, new Vector3(0, y, 0), Quaternion.identity);
         go.transform.parent = this.transform;
     }

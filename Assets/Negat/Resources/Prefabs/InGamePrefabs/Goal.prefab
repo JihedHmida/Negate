@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7516650081613127135}
-  - component: {fileID: 8280885698788128494}
-  - component: {fileID: 8593445545975243876}
+  - component: {fileID: -3379556749545414052}
+  - component: {fileID: 7984864184267290976}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -33,7 +33,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8280885698788128494
+--- !u!114 &-3379556749545414052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849269713179990810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2020a60e006449b45a0fb587d56b105b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goType: 4
+--- !u!114 &7984864184267290976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,19 +67,6 @@ MonoBehaviour:
   MaxX: 3.5
   goal: {fileID: 6973044924004522421}
   movementSpeed: 3
---- !u!114 &8593445545975243876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849269713179990810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2020a60e006449b45a0fb587d56b105b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goType: 4
 --- !u!1001 &6977348068179993623
 PrefabInstance:
   m_ObjectHideFlags: 0

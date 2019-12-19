@@ -43,17 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fba77cd9c58a274aac75be53c8646e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTextures:
-  - index: 0
-    texture: {fileID: 2800000, guid: 3c58f72cb0060da448c05543a5e57965, type: 3}
+  levelPack:
   - index: 1
-    texture: {fileID: 2800000, guid: 3e6af4b227684de4c8b3b2b19e3b9857, type: 3}
+    levelTextures:
+    - {fileID: 2800000, guid: 3c58f72cb0060da448c05543a5e57965, type: 3}
   - index: 2
-    texture: {fileID: 2800000, guid: d9b0539681de5c546baf4bf424343ccb, type: 3}
+    levelTextures:
+    - {fileID: 2800000, guid: 3c58f72cb0060da448c05543a5e57965, type: 3}
   - index: 3
-    texture: {fileID: 2800000, guid: 43b8d4669bb60a1468c42a8999440e10, type: 3}
-  - index: 4
-    texture: {fileID: 2800000, guid: 58ce48b70e9b2b14aae6cd84f2fd0bac, type: 3}
-  - index: 5
-    texture: {fileID: 2800000, guid: b951be6d23e484042bbda03dd402abc4, type: 3}
+    levelTextures:
+    - {fileID: 2800000, guid: 3c58f72cb0060da448c05543a5e57965, type: 3}
   soundAudioClips: []

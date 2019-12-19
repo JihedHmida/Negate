@@ -11,6 +11,7 @@ public static class Loader
         MainScene,
         LevelScene,
         GameScene,
+        PackScene,
 
     }
     public static Action onLoaderCallBack;
@@ -25,30 +26,30 @@ public static class Loader
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
     }
 
-    public static void Load(Scene scene, int index)
-    {
-        GameHandler.RestValues();
-
-        onLoaderCallBack = () =>
-        {
-            SceneManager.LoadScene(scene.ToString());
-            LevelLoaderManager.Instance.index = index;
-        };
-        SceneManager.LoadScene(Scene.LoadingScene.ToString());
-    }
-
-    public static void LoadGameScene(int index)
+    public static void LoadGameScene(int pack, int level)
     {
         GameHandler.RestValues();
 
         onLoaderCallBack = () =>
         {
             SceneManager.LoadScene(Scene.GameScene.ToString());
-            LevelLoaderManager.Instance.index = index;
+            LevelLoaderManager.Instance.level = level;
+            LevelLoaderManager.Instance.pack = pack;
+
         };
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
     }
 
+    public static void LoadPackScene(int index)
+    {
+        onLoaderCallBack = () =>
+        {
+            SceneManager.LoadScene(index + 3);
+            LevelManager.GetTextures(index);
+        };
+        SceneManager.LoadScene(Scene.LoadingScene.ToString());
+
+    }
     public static void LoaderCallBack()
     {
         if (onLoaderCallBack != null)

@@ -49,8 +49,27 @@ MonoBehaviour:
   colorToPrefabs:
   - color:
       serializedVersion: 2
+      rgba: 4294904832
+    prefab: {fileID: 7222192282983312725, guid: 874cafc6d10c906409c2292aef36a4c3,
+      type: 3}
+  - color:
+      serializedVersion: 2
+      rgba: 4280229798
+    prefab: {fileID: 4226257465213040772, guid: 374d9b843e2d8654288636d6d148605c,
+      type: 3}
+  - color:
+      serializedVersion: 2
+      rgba: 4278255615
+    prefab: {fileID: 1849269713179990810, guid: 5c011e498ab456f41ae24cdfd80f1bd3,
+      type: 3}
+  - color:
+      serializedVersion: 2
+      rgba: 4279238400
+    prefab: {fileID: 174055385316070793, guid: f58a49b15515c5a479d7bf394411b80a, type: 3}
+  - color:
+      serializedVersion: 2
       rgba: 4278190335
-    prefab: {fileID: 5131520098645615136, guid: c7cf38e82884b2543975be2986168017,
+    prefab: {fileID: 4622742537499897908, guid: 9f7cd9bdc47bc5746bc1bc5063857bfa,
       type: 3}
   - color:
       serializedVersion: 2
@@ -64,15 +83,15 @@ MonoBehaviour:
       type: 3}
   - color:
       serializedVersion: 2
-      rgba: 4278253311
-    prefab: {fileID: 1849269713179990810, guid: 5c011e498ab456f41ae24cdfd80f1bd3,
+      rgba: 4278976497
+    prefab: {fileID: 3513805126246993207, guid: deafbe98636d59043899bcf9832b99a3,
       type: 3}
   - color:
       serializedVersion: 2
-      rgba: 4294851901
-    prefab: {fileID: 7222192282983312725, guid: 874cafc6d10c906409c2292aef36a4c3,
+      rgba: 4280221863
+    prefab: {fileID: 5131520098645615136, guid: c7cf38e82884b2543975be2986168017,
       type: 3}
-  shurikenA: []
-  shurikenB: []
+  movingEnemyA: []
+  movingEnemyB: []
   LaserA: []
   LaserB: []

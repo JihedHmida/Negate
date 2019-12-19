@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class LevelLoaderManager : MonoBehaviour
 {
-    public int index;
+    public int level;
+    public int pack;
+
     public static LevelLoaderManager Instance = null;
 
     private void Awake()

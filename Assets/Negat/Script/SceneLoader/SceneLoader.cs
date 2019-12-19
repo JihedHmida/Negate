@@ -7,7 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadLevelScene()
     {
-        Loader.Load(Loader.Scene.LevelScene);
+        Loader.Load(Loader.Scene.PackScene);
     }
 
 

@@ -19,15 +19,18 @@ public class GameAssets : MonoBehaviour
 
 
 
-    #region Levels 
-    [Header("Levels")]
-    public LevelTexture[] levelTextures;
+    #region LevelPack 
+    [Header("Level Pack")]
+    public LevelPack[] levelPack;
+
     [System.Serializable]
-    public class LevelTexture
+    public class LevelPack
     {
         public int index;
-        public Texture2D texture;
+        public Texture2D[] levelTextures;
+
     }
+
     #endregion
 
     #region Sounds 

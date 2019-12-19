@@ -6,36 +6,30 @@ using UnityEngine.UI;
 
 public static class LevelManager
 {
-    private static bool isInit = false;
-    private static Dictionary<int, Texture2D> textureLevelDictionary;
+    private static Texture2D[] levelTextures;
 
-    public static void Initialize()
+
+
+
+    public static void GetTextures(int pack)
     {
-        if (!isInit)
-        {
-            GetTextureGameAssets();
-            isInit = true;
-        }
+        levelTextures = PackManager.GetPack(pack);
+
     }
-
-    public static Texture2D GetTexture2D(int index)
+    public static int TextureCount()
     {
-        if (textureLevelDictionary.ContainsKey(index))
+        return levelTextures.Length ;
+    }
+    public static Texture2D GetTexture2D(int level)
+    {
+        if (levelTextures.Length > 0)
         {
-            return textureLevelDictionary[index];
+            return levelTextures[level];
         }
-        Debug.LogWarning("No Texture With index of  " + index + "is found!!");
+        Debug.LogWarning("No Texture With index of  " + level + "is found!!");
         return null;
     }
 
-    public static void GetTextureGameAssets()
-    {
-        textureLevelDictionary = new Dictionary<int, Texture2D>();
-        foreach (GameAssets.LevelTexture levelTexture in GameAssets.Instance.levelTextures)
-        {
-            textureLevelDictionary.Add(levelTexture.index, levelTexture.texture);
-        }
-    }
 
 
 

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSelectMenu : MonoBehaviour
+public class PackSelectMenu : MonoBehaviour
 {
-    public int totalLevel = 3;
-    public int unlockedLevel = 2;
+    public int totalPack = 3;
+    public int unlockedPack = 3;
 
     private int totalPage = 0;
     private int page = 0;
@@ -13,12 +13,12 @@ public class LevelSelectMenu : MonoBehaviour
 
     public GameObject nextButton;
     public GameObject backButton;
-    private LevelButton[] levelButtons;
+    private PackButton[] packButtons;
 
     private void OnEnable()
     {
-        totalLevel = LevelManager.TextureCount();
-        levelButtons = GetComponentsInChildren<LevelButton>();
+        totalPack = PackManager.PacksCount();
+        packButtons = GetComponentsInChildren<PackButton>();
     }
 
 
@@ -27,19 +27,18 @@ public class LevelSelectMenu : MonoBehaviour
         Refresh();
     }
 
-    public void StartLevel(int level)
+    public void LoadPack(int pack)
     {
-
-        Loader.LoadGameScene(LevelLoaderManager.Instance.pack,level - 1);
-        Debug.Log(level);
-
-        // if (level == unlockedLevel)
+        LevelLoaderManager.Instance.pack = pack;
+        Loader.LoadPackScene(pack);
+        //Debug.Log(pack);
+        // if (pack == unlockedLevel)
         // {
         //     unlockedLevel++;
         // }
-        // int star = GetStar(level);
+        // int star = GetStar(pack);
         // star = Mathf.Clamp(star + 1, 0, 3);
-        // SetStar(level, star);
+        // SetStar(pack, star);
         // Refresh();
 
     }
@@ -54,26 +53,22 @@ public class LevelSelectMenu : MonoBehaviour
         page--;
         Refresh();
     }
-    public void ClickPack()
-    {
-        Loader.Load(Loader.Scene.PackScene);
-    }
 
     public void Refresh()
     {
-        totalPage = totalLevel / pageItem;
+        totalPage = totalPack / pageItem;
         int index = page * pageItem;
-        for (int i = 0; i < levelButtons.Length; i++)
+        for (int i = 0; i < packButtons.Length; i++)
         {
-            int level = index + i + 1;
-            if (level <= totalLevel)
+            int pack = index + i + 1;
+            if (pack <= totalPack)
             {
-                levelButtons[i].gameObject.SetActive(true);
-                levelButtons[i].Setup(level, GetStar(level), level <= unlockedLevel);
+                packButtons[i].gameObject.SetActive(true);
+                packButtons[i].Setup(pack, pack <= unlockedPack);
             }
             else
             {
-                levelButtons[i].gameObject.SetActive(false);
+                packButtons[i].gameObject.SetActive(false);
 
             }
         }
@@ -85,6 +80,10 @@ public class LevelSelectMenu : MonoBehaviour
         backButton.SetActive(page > 0);
         nextButton.SetActive(page < totalPage);
     }
+
+
+
+
     private void SetStar(int level, int starAmount)
     {
         PlayerPrefs.SetInt(GetKey(level), starAmount);
@@ -97,5 +96,4 @@ public class LevelSelectMenu : MonoBehaviour
     {
         return "Level_" + level + "_Star";
     }
-
 }
